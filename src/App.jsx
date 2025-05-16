@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import MainContent from "@/pages/MainContent";
@@ -8,6 +8,21 @@ import config from "@/config/config";
 
 function App() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
+  const [guestName, setGuestName] = useState("");
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestParam = urlParams.get("guest");
+
+    if (!guestParam) {
+      setGuestName("");
+
+      return;
+    }
+
+    setGuestName(decodeURIComponent(guestParam));
+  }, []);
+
   return (
     <HelmetProvider>
       <Helmet>
@@ -39,7 +54,10 @@ function App() {
 
       <AnimatePresence mode="wait">
         {!isInvitationOpen ? (
-          <LandingPage onOpenInvitation={() => setIsInvitationOpen(true)} />
+          <LandingPage
+            onOpenInvitation={() => setIsInvitationOpen(true)}
+            guestName={guestName}
+          />
         ) : (
           <Layout>
             <MainContent />
