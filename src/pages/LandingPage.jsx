@@ -57,7 +57,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
                 Bapak/Ibu/Saudara/i
               </p>
               <p className="text-rose-400 font-bold text-lg">
-                {guestName === "" ? "Tamu" : guestName}
+                {guestName === "" ? "Tamu" : guestName} & Partner
               </p>
             </motion.div>
 

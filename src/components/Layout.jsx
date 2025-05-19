@@ -1,22 +1,20 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Music, PauseCircle, PlayCircle } from 'lucide-react';
-import config from '@/config/config';
-import BottomBar from '@/components/BottomBar';
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Music, PauseCircle, PlayCircle } from "lucide-react";
+import config from "@/config/config";
+import BottomBar from "@/components/BottomBar";
 
+// eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const audioRef = useRef(null);
   const wasPlayingRef = useRef(false);
 
-  // First useEffect to handle initial setup and auto-play attempt
   useEffect(() => {
-    // Create audio element
     audioRef.current = new Audio(config.data.audio.src);
     audioRef.current.loop = config.data.audio.loop;
 
-    // Try to autoplay
     const attemptAutoplay = async () => {
       try {
         await audioRef.current.play();
@@ -25,7 +23,7 @@ const Layout = ({ children }) => {
         setShowToast(true);
         setTimeout(() => setShowToast(false), 3000);
       } catch (error) {
-        console.log('Autoplay failed, waiting for user interaction');
+        console.log("Autoplay failed, waiting for user interaction");
         // Add click event listener for first interaction
         const handleFirstInteraction = async () => {
           try {
@@ -34,12 +32,12 @@ const Layout = ({ children }) => {
             wasPlayingRef.current = true;
             setShowToast(true);
             setTimeout(() => setShowToast(false), 3000);
-            document.removeEventListener('click', handleFirstInteraction);
+            document.removeEventListener("click", handleFirstInteraction);
           } catch (err) {
-            console.error('Playback failed after interaction:', err);
+            console.error("Playback failed after interaction:", err);
           }
         };
-        document.addEventListener('click', handleFirstInteraction);
+        document.addEventListener("click", handleFirstInteraction);
       }
     };
 
@@ -98,22 +96,22 @@ const Layout = ({ children }) => {
     };
 
     if (audioRef.current) {
-      audioRef.current.addEventListener('play', handlePlay);
-      audioRef.current.addEventListener('pause', handlePause);
+      audioRef.current.addEventListener("play", handlePlay);
+      audioRef.current.addEventListener("pause", handlePause);
     }
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('blur', handleWindowBlur);
-    window.addEventListener('focus', handleWindowFocus);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("blur", handleWindowBlur);
+    window.addEventListener("focus", handleWindowFocus);
 
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('blur', handleWindowBlur);
-      window.removeEventListener('focus', handleWindowFocus);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("blur", handleWindowBlur);
+      window.removeEventListener("focus", handleWindowFocus);
 
       if (audioRef.current) {
-        audioRef.current.removeEventListener('play', handlePlay);
-        audioRef.current.removeEventListener('pause', handlePause);
+        audioRef.current.removeEventListener("play", handlePlay);
+        audioRef.current.removeEventListener("pause", handlePause);
       }
     };
   }, [isPlaying]);
@@ -130,7 +128,7 @@ const Layout = ({ children }) => {
           wasPlayingRef.current = true;
         }
       } catch (error) {
-        console.error('Playback error:', error);
+        console.error("Playback error:", error);
       }
     }
   };
@@ -144,8 +142,8 @@ const Layout = ({ children }) => {
       }
     };
 
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, []);
 
   return (
@@ -156,7 +154,6 @@ const Layout = ({ children }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Music Control Button with Status Indicator */}
         <motion.button
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -175,9 +172,7 @@ const Layout = ({ children }) => {
           )}
         </motion.button>
 
-        <main className="relative h-full w-full pb-[100px]">
-          {children}
-        </main>
+        <main className="relative h-full w-full pb-[100px]">{children}</main>
         <BottomBar />
         {/* Music Info Toast */}
         <AnimatePresence>

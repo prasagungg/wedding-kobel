@@ -23,8 +23,10 @@ export default function Hero() {
     }
   }, []);
 
+  // eslint-disable-next-line react/prop-types
   const CountdownTimer = ({ targetDate }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function calculateTimeLeft() {
       const difference = +new Date(targetDate) - +new Date();
       let timeLeft = {};
@@ -39,12 +41,13 @@ export default function Hero() {
       }
       return timeLeft;
     }
+
     useEffect(() => {
       const timer = setInterval(() => {
         setTimeLeft(calculateTimeLeft());
       }, 1000);
       return () => clearInterval(timer);
-    }, [targetDate]);
+    }, [calculateTimeLeft, targetDate]);
 
     return (
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
