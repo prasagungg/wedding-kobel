@@ -1,4 +1,3 @@
-// src/components/bottom-bar/BottomBar.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Home, MapPin, Gift, MessageCircleHeart } from "lucide-react";
