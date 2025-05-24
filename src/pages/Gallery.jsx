@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Marquee from "@/components/ui/marquee";
 import { motion, AnimatePresence } from "framer-motion";
 import { Image } from "lucide-react";
@@ -12,109 +13,142 @@ function shuffleArray(array) {
   return shuffled;
 }
 
+function MarqueeRow({ items, reverse = false }) {
+  return (
+    <div className="max-w-2xl mx-auto space-y-6">
+      <AnimatePresence>
+        <Marquee
+          speed={120}
+          gradient={false}
+          className="[--duration:120s] py-2"
+          reverse={reverse}
+        >
+          {items.map((galery, index) => (
+            <motion.div
+              key={galery.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative w-[280px] sm:w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
+            >
+              <img
+                src={galery.src}
+                alt={galery.name.replace(/-/g, " ")}
+                className="w-full h-40 object-cover"
+                loading="lazy"
+                srcSet={`${galery.src}?w=280 280w, ${galery.src}?w=560 560w`}
+                sizes="(max-width: 600px) 280px, 560px"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-xl" />
+            </motion.div>
+          ))}
+        </Marquee>
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Gallery() {
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [shuffledGaleries1, setShuffledGaleries1] = useState([]);
-  const [shuffledGaleries2, setShuffledGaleries2] = useState([]);
-  const [shuffledGaleries3, setShuffledGaleries3] = useState([]);
 
   const galeries = useMemo(
     () => [
       {
         name: "gambar-1",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%281%29-NNWnSeSF4ZZ939tpU5mOoiB35MwQ7i.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%281%29-NNWnSeSF4ZZ939tpU5mOoiB35MwQ7i.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-2",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2810%29-cDGbufld9b5GRfe85bKbygDYediMR8.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2810%29-cDGbufld9b5GRfe85bKbygDYediMR8.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-3",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2811%29-Ktt5AdyjXSwnDr75E0C1MN9vkNI2oV.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2811%29-Ktt5AdyjXSwnDr75E0C1MN9vkNI2oV.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-4",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2812%29-4boz3fsuwBaDPp7rKFZThUWZr1mc0D.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2812%29-4boz3fsuwBaDPp7rKFZThUWZr1mc0D.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-5",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2813%29-rW104GlOpeUMS0mPjIdvsqxDfRo5sT.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2813%29-rW104GlOpeUMS0mPjIdvsqxDfRo5sT.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-6",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2814%29-DT9H7z1QL6jjI7NT0UQAt2yglplrmw.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2814%29-DT9H7z1QL6jjI7NT0UQAt2yglplrmw.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-7",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2815%29-dQYhbBcxEprTnQ9WRPgQa98hSFgQj6.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2815%29-dQYhbBcxEprTnQ9WRPgQa98hSFgQj6.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-8",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2816%29-rmW1lmLlKCs67pAspmbpsmnmKPLamV.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2816%29-rmW1lmLlKCs67pAspmbpsmnmKPLamV.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-9",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2817%29-q5zrj9iBRlLm8kMf0nDPEbwcMUAlgo.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2817%29-q5zrj9iBRlLm8kMf0nDPEbwcMUAlgo.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-10",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2818%29-gM8AQONszylXyIKQPXiloPWl4pkQDY.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2818%29-gM8AQONszylXyIKQPXiloPWl4pkQDY.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-11",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2819%29-1CkvF9poAdYI2Erbc40U7nAdDgxv2j.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2819%29-1CkvF9poAdYI2Erbc40U7nAdDgxv2j.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-12",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%282%29-tESfxJfps9laXks7CiKQoRewKmPJny.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%282%29-tESfxJfps9laXks7CiKQoRewKmPJny.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-13",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2820%29-hoIoNljt8lyhODL9lKNNZEgnEeL96D.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2820%29-hoIoNljt8lyhODL9lKNNZEgnEeL96D.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-14",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2821%29-HzPBvJ0BqyYzYCpwd0gHXGXHiBtr1R.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2821%29-HzPBvJ0BqyYzYCpwd0gHXGXHiBtr1R.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-15",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2822%29-KXZxBVg4Sf6WpbSlDgQIEkOi3S8nGB.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2822%29-KXZxBVg4Sf6WpbSlDgQIEkOi3S8nGB.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-16",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2823%29-6SSETBIEmQjKFoskXGzPQScnUjsUJl.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2823%29-6SSETBIEmQjKFoskXGzPQScnUjsUJl.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-17",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2824%29-gKVJdQHLnVSyerorklZZ5Bics3nxGd.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2824%29-gKVJdQHLnVSyerorklZZ5Bics3nxGd.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-18",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%283%29-rBG4ye0TgxqYM9iH58ajOO2CWbSbvq.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%283%29-rBG4ye0TgxqYM9iH58ajOO2CWbSbvq.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-19",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%284%29-CSSiIz0fWF2yBlpdXI778tJIuScQMj.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%284%29-CSSiIz0fWF2yBlpdXI778tJIuScQMj.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-20",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%285%29-f0SnWki4f2Oh1rHyCk3o4pcYdfS0ly.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%285%29-f0SnWki4f2Oh1rHyCk3o4pcYdfS0ly.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-21",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%286%29-GdIyvUuKLdiWohEYecIutIJ9MsJXOd.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%286%29-GdIyvUuKLdiWohEYecIutIJ9MsJXOd.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-22",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%287%29-ssuYQNq0qWYbaMdX9fAzCbS0DWv67I.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%287%29-ssuYQNq0qWYbaMdX9fAzCbS0DWv67I.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-23",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%288%29-pz0yQaeA2l3CARdpetgOt0KudTeNzX.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%288%29-pz0yQaeA2l3CARdpetgOt0KudTeNzX.jpg?auto=format&fit=crop&w=280",
       },
       {
         name: "gambar-24",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%289%29-5UxERrakpXHmDuzH0WvEzctUWCaD2E.jpg",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%289%29-5UxERrakpXHmDuzH0WvEzctUWCaD2E.jpg?auto=format&fit=crop&w=280",
       },
     ],
     []
@@ -122,10 +156,16 @@ export default function Gallery() {
 
   useEffect(() => {
     setHasAnimated(true);
-    setShuffledGaleries1(shuffleArray(galeries));
-    setShuffledGaleries2(shuffleArray(galeries));
-    setShuffledGaleries3(shuffleArray(galeries));
   }, [galeries]);
+
+  const [shuffledGaleries1, shuffledGaleries2, shuffledGaleries3] =
+    useMemo(() => {
+      return [
+        shuffleArray(galeries),
+        shuffleArray(galeries),
+        shuffleArray(galeries),
+      ];
+    }, [galeries]);
 
   return (
     <>
@@ -169,117 +209,9 @@ export default function Gallery() {
               <div className="h-[1px] w-12 bg-rose-200" />
             </motion.div>
 
-            <div className="max-w-2xl mx-auto space-y-6">
-              <AnimatePresence>
-                <Marquee
-                  speed={120}
-                  gradient={false}
-                  className="[--duration:120s] py-2"
-                >
-                  {shuffledGaleries1.map((galery, index) => (
-                    <motion.div
-                      key={galery.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group relative w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
-                    >
-                      {/* Image */}
-                      <img
-                        src={galery.src}
-                        alt={`Gallery item ${index + 1}`}
-                        className="w-full h-40 object-cover"
-                        loading="lazy"
-                        srcSet={`
-                        ${galery.src}?w=280 280w,
-                        ${galery.src}?w=560 560w
-                        `}
-                        sizes="(max-width: 600px) 280px, 560px"
-                      />
-
-                      {/* Optional overlay on hover */}
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-xl" />
-                    </motion.div>
-                  ))}
-                </Marquee>
-              </AnimatePresence>
-            </div>
-
-            <div className="max-w-2xl mx-auto space-y-6">
-              <AnimatePresence>
-                <Marquee
-                  speed={120}
-                  gradient={false}
-                  className="[--duration:120s] py-2"
-                  reverse={true}
-                >
-                  {shuffledGaleries2.map((galery, index) => (
-                    <motion.div
-                      key={galery.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group relative w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
-                    >
-                      {/* Image */}
-                      <img
-                        src={galery.src}
-                        alt={`Gallery item ${index + 1}`}
-                        className="w-full h-40 object-cover"
-                        loading="lazy"
-                        srcSet={`
-                        ${galery.src}?w=280 280w,
-                        ${galery.src}?w=560 560w
-                        `}
-                        sizes="(max-width: 600px) 280px, 560px"
-                      />
-
-                      {/* Optional overlay on hover */}
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-xl" />
-                    </motion.div>
-                  ))}
-                </Marquee>
-              </AnimatePresence>
-            </div>
-
-            <div className="max-w-2xl mx-auto">
-              <AnimatePresence>
-                <Marquee
-                  speed={120}
-                  gradient={false}
-                  className="[--duration:120s] py-2"
-                >
-                  {shuffledGaleries3.map((galery, index) => (
-                    <motion.div
-                      key={galery.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group relative w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
-                    >
-                      {/* Image */}
-                      <img
-                        src={galery.src}
-                        alt={`Gallery item ${index + 1}`}
-                        className="w-full h-40 object-cover"
-                        loading="lazy"
-                        srcSet={`
-                        ${galery.src}?w=280 280w,
-                        ${galery.src}?w=560 560w
-                      `}
-                        sizes="(max-width: 600px) 280px, 560px"
-                      />
-
-                      {/* Optional overlay on hover */}
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-xl" />
-                    </motion.div>
-                  ))}
-                </Marquee>
-              </AnimatePresence>
-            </div>
+            <MarqueeRow items={shuffledGaleries1} />
+            <MarqueeRow items={shuffledGaleries2} reverse />
+            <MarqueeRow items={shuffledGaleries3} />
           </motion.div>
         </div>
       </section>
