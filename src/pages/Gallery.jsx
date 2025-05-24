@@ -1,7 +1,7 @@
 import Marquee from "@/components/ui/marquee";
 import { motion, AnimatePresence } from "framer-motion";
 import { Image } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import gambar1 from "@/assets/galery/1.jpg";
 import gambar2 from "@/assets/galery/2.jpg";
@@ -28,39 +28,57 @@ import gambar22 from "@/assets/galery/22.jpg";
 import gambar23 from "@/assets/galery/23.jpg";
 import gambar24 from "@/assets/galery/24.jpg";
 
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Gallery() {
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [shuffledGaleries1, setShuffledGaleries1] = useState([]);
+  const [shuffledGaleries2, setShuffledGaleries2] = useState([]);
+  const [shuffledGaleries3, setShuffledGaleries3] = useState([]);
+
+  const galeries = useMemo(
+    () => [
+      { name: "gambar-1", src: gambar1 },
+      { name: "gambar-2", src: gambar2 },
+      { name: "gambar-3", src: gambar3 },
+      { name: "gambar-4", src: gambar4 },
+      { name: "gambar-5", src: gambar5 },
+      { name: "gambar-6", src: gambar6 },
+      { name: "gambar-7", src: gambar7 },
+      { name: "gambar-8", src: gambar8 },
+      { name: "gambar-9", src: gambar9 },
+      { name: "gambar-10", src: gambar10 },
+      { name: "gambar-11", src: gambar11 },
+      { name: "gambar-12", src: gambar12 },
+      { name: "gambar-13", src: gambar13 },
+      { name: "gambar-14", src: gambar14 },
+      { name: "gambar-15", src: gambar15 },
+      { name: "gambar-16", src: gambar16 },
+      { name: "gambar-17", src: gambar17 },
+      { name: "gambar-18", src: gambar18 },
+      { name: "gambar-19", src: gambar19 },
+      { name: "gambar-20", src: gambar20 },
+      { name: "gambar-21", src: gambar21 },
+      { name: "gambar-22", src: gambar22 },
+      { name: "gambar-23", src: gambar23 },
+      { name: "gambar-24", src: gambar24 },
+    ],
+    []
+  );
 
   useEffect(() => {
     setHasAnimated(true);
-  }, []);
-
-  const galeries = [
-    { name: "gambar-1", src: gambar1 },
-    { name: "gambar-2", src: gambar2 },
-    { name: "gambar-3", src: gambar3 },
-    { name: "gambar-4", src: gambar4 },
-    { name: "gambar-5", src: gambar5 },
-    { name: "gambar-6", src: gambar6 },
-    { name: "gambar-7", src: gambar7 },
-    { name: "gambar-8", src: gambar8 },
-    { name: "gambar-9", src: gambar9 },
-    { name: "gambar-10", src: gambar10 },
-    { name: "gambar-11", src: gambar11 },
-    { name: "gambar-12", src: gambar12 },
-    { name: "gambar-13", src: gambar13 },
-    { name: "gambar-14", src: gambar14 },
-    { name: "gambar-15", src: gambar15 },
-    { name: "gambar-16", src: gambar16 },
-    { name: "gambar-17", src: gambar17 },
-    { name: "gambar-18", src: gambar18 },
-    { name: "gambar-19", src: gambar19 },
-    { name: "gambar-20", src: gambar20 },
-    { name: "gambar-21", src: gambar21 },
-    { name: "gambar-22", src: gambar22 },
-    { name: "gambar-23", src: gambar23 },
-    { name: "gambar-24", src: gambar24 },
-  ];
+    setShuffledGaleries1(shuffleArray(galeries));
+    setShuffledGaleries2(shuffleArray(galeries));
+    setShuffledGaleries3(shuffleArray(galeries));
+  }, [galeries]);
 
   return (
     <>
@@ -111,7 +129,7 @@ export default function Gallery() {
                   gradient={false}
                   className="[--duration:120s] py-2"
                 >
-                  {galeries.map((galery, index) => (
+                  {shuffledGaleries1.map((galery, index) => (
                     <motion.div
                       key={galery.name}
                       initial={{ opacity: 0, y: 20 }}
@@ -143,7 +161,7 @@ export default function Gallery() {
                   className="[--duration:120s] py-2"
                   reverse={true}
                 >
-                  {galeries.map((galery, index) => (
+                  {shuffledGaleries2.map((galery, index) => (
                     <motion.div
                       key={galery.name}
                       initial={{ opacity: 0, y: 20 }}
@@ -174,7 +192,7 @@ export default function Gallery() {
                   gradient={false}
                   className="[--duration:120s] py-2"
                 >
-                  {galeries.map((galery, index) => (
+                  {shuffledGaleries3.map((galery, index) => (
                     <motion.div
                       key={galery.name}
                       initial={{ opacity: 0, y: 20 }}
