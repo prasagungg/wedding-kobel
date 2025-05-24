@@ -19,7 +19,7 @@ function MarqueeRow({ items, reverse = false }) {
             className="group relative w-[280px] sm:w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
           >
             <img
-              src={galery.src}
+              src={`${galery.src}?auto=format&fit=max&w=400`}
               alt={galery.name.replace(/-/g, " ")}
               className="w-full h-40 object-cover"
               loading="lazy"
