@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import config from "@/config/config";
 import { formatEventDate } from "@/lib/formatEventDate";
 import { safeBase64 } from "@/lib/base64";
+import flower from "@/assets/flower.png";
+import sideFlower from "@/assets/sideFlower.png";
+import middleFlower from "@/assets/midle-flower.png";
 
 export default function Hero() {
   const [guestName, setGuestName] = useState("");
@@ -116,12 +119,56 @@ export default function Hero() {
         id="home"
         className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden"
       >
+        <div
+          className="w-[400px] h-[400px] bg-cover absolute bottom-0 left-1/2 -translate-x-1/2  "
+          style={{ backgroundImage: `url(${middleFlower})` }}
+        ></div>
+
+        <div
+          className="w-[100px] h-[100px] bg-cover absolute right-0 top-0"
+          style={{ backgroundImage: `url(${flower})` }}
+        ></div>
+
+        <div
+          className="w-[100px] h-[100px] bg-cover absolute left-0 top-0 -scale-x-100"
+          style={{ backgroundImage: `url(${flower})` }}
+        ></div>
+
+        <div
+          className="w-[100px] h-[300px] bg-cover bg-center absolute left-0 bottom-0  -scale-x-100"
+          style={{ backgroundImage: `url(${sideFlower})` }}
+        ></div>
+
+        <div
+          className="w-[100px] h-[300px] bg-cover bg-center absolute right-0 bottom-0 "
+          style={{ backgroundImage: `url(${sideFlower})` }}
+        ></div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-6 relative z-10"
         >
+          <div className="relative">
+            <FloatingHearts />
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                rotate: [0, 5, -5, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Heart
+                className="w-10 sm:w-12 h-10 sm:h-12 text-rose-500 mx-auto"
+                fill="currentColor"
+              />
+            </motion.div>
+          </div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -226,26 +273,6 @@ export default function Hero() {
           </motion.div>
 
           <CountdownTimer targetDate={config.data.date} />
-
-          <div className="pt-6 relative">
-            <FloatingHearts />
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <Heart
-                className="w-10 sm:w-12 h-10 sm:h-12 text-rose-500 mx-auto"
-                fill="currentColor"
-              />
-            </motion.div>
-          </div>
         </motion.div>
       </section>
     </>
