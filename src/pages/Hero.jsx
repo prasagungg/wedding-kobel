@@ -5,7 +5,7 @@ import config from "@/config/config";
 import { formatEventDate } from "@/lib/formatEventDate";
 import { safeBase64 } from "@/lib/base64";
 import flower from "@/assets/flower.png";
-import sideFlower from "@/assets/sideFlower.png";
+import sideFlower from "@/assets/sideflower.png";
 import middleFlower from "@/assets/midle-flower.png";
 
 export default function Hero() {
