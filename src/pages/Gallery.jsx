@@ -3,31 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Image } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 
-import gambar1 from "@/assets/galery/1.jpg";
-import gambar2 from "@/assets/galery/2.jpg";
-import gambar3 from "@/assets/galery/3.jpg";
-import gambar4 from "@/assets/galery/4.jpg";
-import gambar5 from "@/assets/galery/5.jpg";
-import gambar6 from "@/assets/galery/6.jpg";
-import gambar7 from "@/assets/galery/7.jpg";
-import gambar8 from "@/assets/galery/8.jpg";
-import gambar9 from "@/assets/galery/9.jpg";
-import gambar10 from "@/assets/galery/10.jpg";
-import gambar11 from "@/assets/galery/11.jpg";
-import gambar12 from "@/assets/galery/12.jpg";
-import gambar13 from "@/assets/galery/13.jpg";
-import gambar14 from "@/assets/galery/14.jpg";
-import gambar15 from "@/assets/galery/15.jpg";
-import gambar16 from "@/assets/galery/16.jpg";
-import gambar17 from "@/assets/galery/17.jpg";
-import gambar18 from "@/assets/galery/18.jpg";
-import gambar19 from "@/assets/galery/19.jpg";
-import gambar20 from "@/assets/galery/20.jpg";
-import gambar21 from "@/assets/galery/21.jpg";
-import gambar22 from "@/assets/galery/22.jpg";
-import gambar23 from "@/assets/galery/23.jpg";
-import gambar24 from "@/assets/galery/24.jpg";
-
 function shuffleArray(array) {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -45,30 +20,102 @@ export default function Gallery() {
 
   const galeries = useMemo(
     () => [
-      { name: "gambar-1", src: gambar1 },
-      { name: "gambar-2", src: gambar2 },
-      { name: "gambar-3", src: gambar3 },
-      { name: "gambar-4", src: gambar4 },
-      { name: "gambar-5", src: gambar5 },
-      { name: "gambar-6", src: gambar6 },
-      { name: "gambar-7", src: gambar7 },
-      { name: "gambar-8", src: gambar8 },
-      { name: "gambar-9", src: gambar9 },
-      { name: "gambar-10", src: gambar10 },
-      { name: "gambar-11", src: gambar11 },
-      { name: "gambar-12", src: gambar12 },
-      { name: "gambar-13", src: gambar13 },
-      { name: "gambar-14", src: gambar14 },
-      { name: "gambar-15", src: gambar15 },
-      { name: "gambar-16", src: gambar16 },
-      { name: "gambar-17", src: gambar17 },
-      { name: "gambar-18", src: gambar18 },
-      { name: "gambar-19", src: gambar19 },
-      { name: "gambar-20", src: gambar20 },
-      { name: "gambar-21", src: gambar21 },
-      { name: "gambar-22", src: gambar22 },
-      { name: "gambar-23", src: gambar23 },
-      { name: "gambar-24", src: gambar24 },
+      {
+        name: "gambar-1",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%281%29-NNWnSeSF4ZZ939tpU5mOoiB35MwQ7i.jpg",
+      },
+      {
+        name: "gambar-2",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2810%29-cDGbufld9b5GRfe85bKbygDYediMR8.jpg",
+      },
+      {
+        name: "gambar-3",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2811%29-Ktt5AdyjXSwnDr75E0C1MN9vkNI2oV.jpg",
+      },
+      {
+        name: "gambar-4",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2812%29-4boz3fsuwBaDPp7rKFZThUWZr1mc0D.jpg",
+      },
+      {
+        name: "gambar-5",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2813%29-rW104GlOpeUMS0mPjIdvsqxDfRo5sT.jpg",
+      },
+      {
+        name: "gambar-6",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2814%29-DT9H7z1QL6jjI7NT0UQAt2yglplrmw.jpg",
+      },
+      {
+        name: "gambar-7",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2815%29-dQYhbBcxEprTnQ9WRPgQa98hSFgQj6.jpg",
+      },
+      {
+        name: "gambar-8",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2816%29-rmW1lmLlKCs67pAspmbpsmnmKPLamV.jpg",
+      },
+      {
+        name: "gambar-9",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2817%29-q5zrj9iBRlLm8kMf0nDPEbwcMUAlgo.jpg",
+      },
+      {
+        name: "gambar-10",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2818%29-gM8AQONszylXyIKQPXiloPWl4pkQDY.jpg",
+      },
+      {
+        name: "gambar-11",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2819%29-1CkvF9poAdYI2Erbc40U7nAdDgxv2j.jpg",
+      },
+      {
+        name: "gambar-12",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%282%29-tESfxJfps9laXks7CiKQoRewKmPJny.jpg",
+      },
+      {
+        name: "gambar-13",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2820%29-hoIoNljt8lyhODL9lKNNZEgnEeL96D.jpg",
+      },
+      {
+        name: "gambar-14",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2821%29-HzPBvJ0BqyYzYCpwd0gHXGXHiBtr1R.jpg",
+      },
+      {
+        name: "gambar-15",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2822%29-KXZxBVg4Sf6WpbSlDgQIEkOi3S8nGB.jpg",
+      },
+      {
+        name: "gambar-16",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2823%29-6SSETBIEmQjKFoskXGzPQScnUjsUJl.jpg",
+      },
+      {
+        name: "gambar-17",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2824%29-gKVJdQHLnVSyerorklZZ5Bics3nxGd.jpg",
+      },
+      {
+        name: "gambar-18",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%283%29-rBG4ye0TgxqYM9iH58ajOO2CWbSbvq.jpg",
+      },
+      {
+        name: "gambar-19",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%284%29-CSSiIz0fWF2yBlpdXI778tJIuScQMj.jpg",
+      },
+      {
+        name: "gambar-20",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%285%29-f0SnWki4f2Oh1rHyCk3o4pcYdfS0ly.jpg",
+      },
+      {
+        name: "gambar-21",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%286%29-GdIyvUuKLdiWohEYecIutIJ9MsJXOd.jpg",
+      },
+      {
+        name: "gambar-22",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%287%29-ssuYQNq0qWYbaMdX9fAzCbS0DWv67I.jpg",
+      },
+      {
+        name: "gambar-23",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%288%29-pz0yQaeA2l3CARdpetgOt0KudTeNzX.jpg",
+      },
+      {
+        name: "gambar-24",
+        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%289%29-5UxERrakpXHmDuzH0WvEzctUWCaD2E.jpg",
+      },
     ],
     []
   );
@@ -143,6 +190,12 @@ export default function Gallery() {
                         src={galery.src}
                         alt={`Gallery item ${index + 1}`}
                         className="w-full h-40 object-cover"
+                        loading="lazy"
+                        srcSet={`
+                        ${galery.src}?w=280 280w,
+                        ${galery.src}?w=560 560w
+                        `}
+                        sizes="(max-width: 600px) 280px, 560px"
                       />
 
                       {/* Optional overlay on hover */}
@@ -175,6 +228,12 @@ export default function Gallery() {
                         src={galery.src}
                         alt={`Gallery item ${index + 1}`}
                         className="w-full h-40 object-cover"
+                        loading="lazy"
+                        srcSet={`
+                        ${galery.src}?w=280 280w,
+                        ${galery.src}?w=560 560w
+                        `}
+                        sizes="(max-width: 600px) 280px, 560px"
                       />
 
                       {/* Optional overlay on hover */}
@@ -206,6 +265,12 @@ export default function Gallery() {
                         src={galery.src}
                         alt={`Gallery item ${index + 1}`}
                         className="w-full h-40 object-cover"
+                        loading="lazy"
+                        srcSet={`
+                        ${galery.src}?w=280 280w,
+                        ${galery.src}?w=560 560w
+                      `}
+                        sizes="(max-width: 600px) 280px, 560px"
                       />
 
                       {/* Optional overlay on hover */}

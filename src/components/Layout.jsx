@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Music, PauseCircle, PlayCircle } from "lucide-react";
 import config from "@/config/config";
 import BottomBar from "@/components/BottomBar";
+import Lagu from "@/assets/lagu.mp3";
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
@@ -12,7 +13,7 @@ const Layout = ({ children }) => {
   const wasPlayingRef = useRef(false);
 
   useEffect(() => {
-    audioRef.current = new Audio(config.data.audio.src);
+    audioRef.current = new Audio(Lagu);
     audioRef.current.loop = config.data.audio.loop;
 
     const attemptAutoplay = async () => {
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
         wasPlayingRef.current = true;
         setShowToast(true);
         setTimeout(() => setShowToast(false), 3000);
+        // eslint-disable-next-line no-unused-vars
       } catch (error) {
         console.log("Autoplay failed, waiting for user interaction");
         // Add click event listener for first interaction
@@ -187,7 +189,7 @@ const Layout = ({ children }) => {
               <div className="bg-black/80 text-white transform -translate-x-1/2 px-4 py-2 rounded-full backdrop-blur-sm flex items-center space-x-2">
                 <Music className="w-4 h-4 animate-pulse" />
                 <span className="text-sm whitespace-nowrap">
-                  {config.data.audio.title}
+                  ED SHEERAN PERFECT
                 </span>
               </div>
             </motion.div>
