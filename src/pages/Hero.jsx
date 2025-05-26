@@ -6,7 +6,7 @@ import { formatEventDate } from "@/lib/formatEventDate";
 import { safeBase64 } from "@/lib/base64";
 import flower from "@/assets/flower.png";
 import sideFlower from "@/assets/sideflower.png";
-import middleFlower from "@/assets/midle-flower.png";
+import middleFlower from "@/assets/hero.png";
 
 export default function Hero() {
   const [guestName, setGuestName] = useState("");
@@ -120,7 +120,7 @@ export default function Hero() {
         className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden"
       >
         <div
-          className="w-[400px] h-[400px] bg-cover absolute bottom-0 left-1/2 -translate-x-1/2  "
+          className="w-[800px] h-[400px] bg-cover bg-center absolute bottom-0 left-1/2 -translate-x-1/2  "
           style={{ backgroundImage: `url(${middleFlower})` }}
         ></div>
 
@@ -135,12 +135,12 @@ export default function Hero() {
         ></div>
 
         <div
-          className="w-[100px] h-[300px] bg-cover bg-center absolute left-0 bottom-0  -scale-x-100"
+          className="w-[100px] h-[300px] bg-cover bg-center absolute left-0 top-1/2 -translate-y-1/2  "
           style={{ backgroundImage: `url(${sideFlower})` }}
         ></div>
 
         <div
-          className="w-[100px] h-[300px] bg-cover bg-center absolute right-0 bottom-0 "
+          className="w-[100px] h-[300px] bg-cover bg-center absolute right-0 top-1/2 -translate-y-1/2"
           style={{ backgroundImage: `url(${sideFlower})` }}
         ></div>
 
