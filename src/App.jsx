@@ -26,19 +26,25 @@ function App() {
   return (
     <HelmetProvider>
       <Helmet>
-        {/* Primary Meta Tags */}
-        <title>{config.data.title}</title>
-        <meta name="title" content={config.data.title} />
-        <meta name="description" content={config.data.description} />
-        {/* Open Graph / Facebook */}
+        <title>Raden & Maulidia</title>
+        <meta name="title" content="Pernikahan Raden & Maulidia" />
+        <meta
+          name="description"
+          content="Kami akan menikah dan mengundang Anda untuk turut merayakan momen istimewa ini."
+        />
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content={window.location.href} />
-        <meta property="og:title" content={config.data.title} />
-        <meta property="og:description" content={config.data.description} />
+        <meta property="og:title" content="Pernikahan Raden & Maulidia" />
+        <meta
+          property="og:description"
+          content="Kami akan menikah dan mengundang Anda untuk turut merayakan momen istimewa ini."
+        />
         <meta property="og:image" content="/thumbnail.png" />
-        {/* Favicon */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         <link rel="icon" type="image/x-icon" href={config.data.favicon} />
-        {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#FDA4AF" />
       </Helmet>
