@@ -40,7 +40,10 @@ function App() {
           property="og:description"
           content="Kami akan menikah dan mengundang Anda untuk turut merayakan momen istimewa ini."
         />
-        <meta property="og:image" content="/thumbnail.png" />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}/thumbnail.png`}
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
