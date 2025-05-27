@@ -9,9 +9,10 @@ import backgroundImage from "@/assets/background.webp";
 const LandingPage = ({ onOpenInvitation, guestName }) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -100, opacity: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="min-h-screen relative overflow-hidden"
     >
       <div
@@ -51,13 +52,11 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
               className="flex flex-col gap-4 mb-6 sm:mb-8 items-center"
             >
               <p className="text-gray-700 font-serif italic text-sm">
-                Kepada Yth.
+                Kami Mengundang
               </p>
-              <p className="text-gray-600 font-medium text-sm">
-                Bapak/Ibu/Saudara/i
-              </p>
+
               <p className="text-rose-400 font-bold text-lg">
-                {guestName === "" ? "Tamu" : guestName} & Partner
+                {guestName === "" ? "Tamu" : guestName}
               </p>
             </motion.div>
 

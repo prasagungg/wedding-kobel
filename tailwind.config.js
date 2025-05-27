@@ -20,6 +20,11 @@ export default {
         serif: ["Playfair Display", "serif"],
       },
       colors: {
+        "broken-black": "#1a1a1a",
+        "broken-white": "#f5f5f5",
+        "gray-soft": "#e5e5e5",
+        "dark-gray": "#333333",
+        "mid-gray": "#444444",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

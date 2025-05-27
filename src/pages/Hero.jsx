@@ -3,29 +3,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import config from "@/config/config";
 import { formatEventDate } from "@/lib/formatEventDate";
-import { safeBase64 } from "@/lib/base64";
 import flower from "@/assets/flower.png";
-import sideFlower from "@/assets/sideflower.png";
 import middleFlower from "@/assets/hero.png";
 
 export default function Hero() {
-  const [guestName, setGuestName] = useState("");
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const guestParam = urlParams.get("guest");
-
-    if (guestParam) {
-      try {
-        const decodedName = safeBase64.decode(guestParam);
-        setGuestName(decodedName);
-      } catch (error) {
-        console.error("Error decoding guest name:", error);
-        setGuestName("");
-      }
-    }
-  }, []);
-
   // eslint-disable-next-line react/prop-types
   const CountdownTimer = ({ targetDate }) => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -53,13 +34,13 @@ export default function Hero() {
     }, [calculateTimeLeft, targetDate]);
 
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+      <div className="grid grid-cols-4 gap-4 mt-8">
         {Object.keys(timeLeft).map((interval) => (
           <motion.div
             key={interval}
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="flex flex-col items-center p-3 bg-white/80 backdrop-blur-sm rounded-xl border border-rose-100"
+            className="flex flex-col items-center p-2 bg-white/80 backdrop-blur-sm rounded-xl border border-rose-100"
           >
             <span className="text-xl sm:text-2xl font-bold text-rose-600">
               {timeLeft[interval]}
@@ -132,16 +113,6 @@ export default function Hero() {
         <div
           className="w-[100px] h-[100px] bg-cover absolute left-0 top-0 -scale-x-100"
           style={{ backgroundImage: `url(${flower})` }}
-        ></div>
-
-        <div
-          className="w-[100px] h-[300px] bg-cover bg-center absolute left-0 top-1/2 -translate-y-1/2  "
-          style={{ backgroundImage: `url(${sideFlower})` }}
-        ></div>
-
-        <div
-          className="w-[100px] h-[300px] bg-cover bg-center absolute right-0 top-1/2 -translate-y-1/2"
-          style={{ backgroundImage: `url(${sideFlower})` }}
         ></div>
 
         <motion.div
@@ -238,29 +209,6 @@ export default function Hero() {
                     </span>
                   </motion.div>
                 </div>
-
-                <div className="flex items-center justify-center gap-3">
-                  <div className="h-px w-8 sm:w-12 bg-rose-200/50" />
-                  <div className="w-2 h-2 rounded-full bg-rose-200" />
-                  <div className="h-px w-8 sm:w-12 bg-rose-200/50" />
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.1 }}
-                  className="space-y-2"
-                >
-                  <p className="text-gray-500 font-serif italic text-sm">
-                    Kepada Yth.
-                  </p>
-                  <p className="text-gray-600 font-medium text-sm">
-                    Bapak/Ibu/Saudara/i
-                  </p>
-                  <p className="text-rose-500 font-semibold text-lg">
-                    {guestName ? guestName : "Tamu"}
-                  </p>
-                </motion.div>
               </div>
 
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-px">
