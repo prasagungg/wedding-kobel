@@ -1,10 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Home, MapPin, Gift, MessageCircleHeart } from "lucide-react";
+import {
+  Home,
+  MapPin,
+  Gift,
+  MessageCircleHeart,
+  Image,
+  Heart,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
   { icon: Home, label: "Beranda", href: "#home" },
+  { icon: Heart, label: "Pasangan", href: "#bride" },
+  { icon: Image, label: "Galeri", href: "#gallery" },
   { icon: MapPin, label: "Lokasi", href: "#location" },
   { icon: Gift, label: "Hadiah", href: "#gifts" },
   { icon: MessageCircleHeart, label: "Harapan", href: "#wishes" },
