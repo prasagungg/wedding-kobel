@@ -23,7 +23,7 @@ export default {
         "broken-black": "#1a1a1a",
         "broken-white": "#FEF9F2",
         "broken-white-2": "#d3b9a8",
-        "background-blue": "#E6F6F8",
+        "background-slate": "#E6F6F8",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -54,7 +54,7 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        cyan: {
+        slate: {
           50: "#fff1f2",
         },
         border: "hsl(var(--border))",

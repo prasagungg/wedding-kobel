@@ -39,9 +39,9 @@ export default function Hero() {
             key={interval}
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="flex flex-col items-center p-2 bg-white/80 backdrop-blur-sm rounded-xl border border-cyan-100"
+            className="flex flex-col items-center p-2 bg-white/80 backdrop-blur-sm rounded-xl border border-slate-100"
           >
-            <span className="text-xl sm:text-2xl font-bold text-cyan-600">
+            <span className="text-xl sm:text-2xl font-bold text-slate-600">
               {timeLeft[interval]}
             </span>
             <span className="text-xs text-gray-500 capitalize">{interval}</span>
@@ -80,10 +80,10 @@ export default function Hero() {
             <Heart
               className={`w-${Math.floor(Math.random() * 2) + 8} h-${Math.floor(Math.random() * 2) + 8} ${
                 i % 3 === 0
-                  ? "text-cyan-400"
+                  ? "text-slate-400"
                   : i % 3 === 1
-                    ? "text-cyan-400"
-                    : "text-cyan-400"
+                    ? "text-slate-400"
+                    : "text-slate-400"
               }`}
               fill="currentColor"
             />
@@ -124,7 +124,7 @@ export default function Hero() {
               }}
             >
               <Heart
-                className="w-10 sm:w-12 h-10 sm:h-12 text-cyan-500 mx-auto"
+                className="w-10 sm:w-12 h-10 sm:h-12 text-slate-500 mx-auto"
                 fill="currentColor"
               />
             </motion.div>
@@ -135,7 +135,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="inline-block mx-auto"
           >
-            <span className="px-4 py-1 text-sm bg-cyan-100 text-cyan-600 rounded-full border border-cyan-200">
+            <span className="px-4 py-1 text-sm bg-slate-100 text-slate-600 rounded-full border border-slate-200">
               Catat Tanggal Penting Ini
             </span>
           </motion.div>
@@ -153,7 +153,7 @@ export default function Hero() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-3xl sm:text-5xl font-serif bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-cyan-600"
+              className="text-3xl sm:text-5xl font-serif bg-clip-text text-transparent bg-gradient-to-r from-slate-600 to-slate-600"
             >
               {config.data.groomName} & {config.data.brideName}
             </motion.h2>
@@ -165,11 +165,11 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             className="relative max-w-md mx-auto"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-cyan-100/30 to-white/50 backdrop-blur-md rounded-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-100/30 to-white/50 backdrop-blur-md rounded-2xl" />
 
-            <div className="relative px-4 sm:px-8 py-8 sm:py-10 rounded-2xl border border-cyan-100/50">
+            <div className="relative px-4 sm:px-8 py-8 sm:py-10 rounded-2xl border border-slate-100/50">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px">
-                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-cyan-200 to-transparent" />
+                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
               </div>
 
               <div className="space-y-6 text-center">
@@ -180,7 +180,7 @@ export default function Hero() {
                     transition={{ delay: 0.9 }}
                     className="flex items-center justify-center space-x-2"
                   >
-                    <Calendar className="w-4 h-4 text-cyan-400" />
+                    <Calendar className="w-4 h-4 text-slate-400" />
                     <span className="text-gray-700 font-medium text-sm sm:text-base">
                       {formatEventDate(config.data.date, "full")}
                     </span>
@@ -192,7 +192,7 @@ export default function Hero() {
                     transition={{ delay: 1 }}
                     className="flex items-center justify-center space-x-2"
                   >
-                    <Clock className="w-4 h-4 text-cyan-400" />
+                    <Clock className="w-4 h-4 text-slate-400" />
                     <span className="text-gray-700 font-medium text-sm sm:text-base">
                       {config.data.time}
                     </span>
@@ -201,12 +201,12 @@ export default function Hero() {
               </div>
 
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-px">
-                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-cyan-200 to-transparent" />
+                <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
               </div>
             </div>
 
-            <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-cyan-100/20 rounded-full blur-xl" />
-            <div className="absolute -bottom-2 -left-2 w-16 sm:w-24 h-16 sm:h-24 bg-cyan-100/20 rounded-full blur-xl" />
+            <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-slate-100/20 rounded-full blur-xl" />
+            <div className="absolute -bottom-2 -left-2 w-16 sm:w-24 h-16 sm:h-24 bg-slate-100/20 rounded-full blur-xl" />
           </motion.div>
 
           <CountdownTimer targetDate={config.data.date} />
