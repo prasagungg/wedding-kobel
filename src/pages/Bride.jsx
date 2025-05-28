@@ -20,16 +20,16 @@ export default function Bride() {
         transition={{ delay: 0.8 }}
         className="relative max-w-md mx-auto"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/100 to-white/50 backdrop-blur-md rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/50 to-white/50 backdrop-blur-md rounded-2xl" />
 
         <div className="relative px-4 sm:px-8 py-8 sm:py-10 rounded-2xl border border-slate-100/50">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px">
-            <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-rose-200 to-transparent" />
           </div>
 
           <div className="space-y-6 text-center">
             <div className="space-y-3">
-              <div className="relative rounded-xl overflow-hidden shadow-xl border border-slate-200">
+              <div className="relative rounded-xl overflow-hidden shadow-xl border border-rose-200">
                 <img
                   src={photo}
                   alt="photo-mempelai"
@@ -37,14 +37,14 @@ export default function Bride() {
                 />
                 {/* Overlay Name */}
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/70 px-4 py-1 rounded-full">
-                  <p className="text-slate-800 font-serif italic text-lg">
+                  <p className="text-rose-800 font-serif italic text-lg">
                     {simpleName}
                   </p>
                 </div>
               </div>
 
               {/* Full Name */}
-              <h2 className="mt-6 text-xl text-slate-500 font-semibold  font-serif">
+              <h2 className="mt-6 text-xl text-rose-500 font-semibold  font-serif">
                 {fullName}
               </h2>
 
@@ -55,12 +55,12 @@ export default function Bride() {
           </div>
 
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-px">
-            <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="w-20 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-rose-200 to-transparent" />
           </div>
         </div>
 
-        <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-slate-100/20 rounded-full blur-xl" />
-        <div className="absolute -bottom-2 -left-2 w-16 sm:w-24 h-16 sm:h-24 bg-slate-100/20 rounded-full blur-xl" />
+        <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-rose-100/20 rounded-full blur-xl" />
+        <div className="absolute -bottom-2 -left-2 w-16 sm:w-24 h-16 sm:h-24 bg-rose-100/20 rounded-full blur-xl" />
       </motion.div>
     );
   };
@@ -79,7 +79,7 @@ export default function Bride() {
               initial={{ opacity: 0, y: 10 }}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="inline-block text-slate-500 font-medium"
+              className="inline-block text-rose-500 font-medium"
             >
               Raden & Maulidia
             </motion.span>

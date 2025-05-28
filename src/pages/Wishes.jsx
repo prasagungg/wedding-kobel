@@ -87,7 +87,7 @@ export default function Wishes() {
       case "ATTENDING":
         return <CheckCircle className="w-4 h-4 text-emerald-500" />;
       case "NOT_ATTENDING":
-        return <XCircle className="w-4 h-4 text-slate-500" />;
+        return <XCircle className="w-4 h-4 text-rose-500" />;
       case "MAYBE":
         return <HelpCircle className="w-4 h-4 text-amber-500" />;
       default:
@@ -113,7 +113,7 @@ export default function Wishes() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block text-slate-500 font-medium"
+              className="inline-block text-rose-500 font-medium"
             >
               Kirimkan Doa dan Harapan Terbaik Anda
             </motion.span>
@@ -134,9 +134,9 @@ export default function Wishes() {
               transition={{ delay: 0.4 }}
               className="flex items-center justify-center gap-4 pt-4"
             >
-              <div className="h-[1px] w-12 bg-slate-200" />
-              <MessageCircle className="w-5 h-5 text-slate-400" />
-              <div className="h-[1px] w-12 bg-slate-200" />
+              <div className="h-[1px] w-12 bg-rose-200" />
+              <MessageCircle className="w-5 h-5 text-rose-400" />
+              <div className="h-[1px] w-12 bg-rose-200" />
             </motion.div>
           </motion.div>
 
@@ -158,15 +158,15 @@ export default function Wishes() {
                     className="group relative w-[280px]"
                   >
                     {/* Background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-100/50 to-slate-100/50 rounded-xl transform transition-transform group-hover:scale-[1.02] duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-rose-100/50 to-rose-100/50 rounded-xl transform transition-transform group-hover:scale-[1.02] duration-300" />
 
                     {/* Card content */}
-                    <div className="relative backdrop-blur-sm bg-white/80 p-4 rounded-xl border border-slate-100/50 shadow-md">
+                    <div className="relative backdrop-blur-sm bg-white/80 p-4 rounded-xl border border-rose-100/50 shadow-md">
                       {/* Header */}
                       <div className="flex items-start space-x-3 mb-2">
                         {/* Avatar */}
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-slate-400 to-slate-400 flex items-center justify-center text-white text-sm font-medium">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-rose-400 to-rose-400 flex items-center justify-center text-white text-sm font-medium">
                             {wish.name[0].toUpperCase()}
                           </div>
                         </div>
@@ -197,7 +197,7 @@ export default function Wishes() {
                       {Date.now() - new Date(wish.timestamp).getTime() <
                         3600000 && (
                         <div className="absolute top-2 right-2">
-                          <span className="px-2 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">
+                          <span className="px-2 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-medium">
                             New
                           </span>
                         </div>
@@ -216,7 +216,7 @@ export default function Wishes() {
             className="max-w-2xl mx-auto mt-12"
           >
             <form onSubmit={handleSubmitWish} className="relative">
-              <div className="backdrop-blur-sm bg-white/80 p-6 rounded-2xl border border-slate-100/50 shadow-lg">
+              <div className="backdrop-blur-sm bg-white/80 p-6 rounded-2xl border border-rose-100/50 shadow-lg">
                 <div className="space-y-2">
                   {/* Name Input */}
                   <div className="space-y-2">
@@ -227,7 +227,7 @@ export default function Wishes() {
                     <input
                       type="text"
                       placeholder="Masukan nama kamu..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-slate-100 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50 transition-all duration-200 text-gray-700 placeholder-gray-400"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-rose-100 focus:border-rose-300 focus:ring focus:ring-rose-200 focus:ring-opacity-50 transition-all duration-200 text-gray-700 placeholder-gray-400"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -248,7 +248,7 @@ export default function Wishes() {
                     <button
                       type="button"
                       onClick={() => setIsOpen(!isOpen)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-slate-100 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50 transition-all duration-200 text-left flex items-center justify-between"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-rose-100 focus:border-rose-300 focus:ring focus:ring-rose-200 focus:ring-opacity-50 transition-all duration-200 text-left flex items-center justify-between"
                     >
                       <span
                         className={
@@ -274,7 +274,7 @@ export default function Wishes() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="absolute z-10 w-full mt-1 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden"
+                          className="absolute z-10 w-full mt-1 bg-white rounded-xl shadow-lg border border-rose-100 overflow-hidden"
                         >
                           {options.map((option) => (
                             <motion.button
@@ -290,8 +290,8 @@ export default function Wishes() {
                               className={`w-full px-4 py-2.5 text-left transition-colors
                                         ${
                                           attendance === option.value
-                                            ? "bg-slate-50 text-slate-600"
-                                            : "text-gray-700 hover:bg-slate-50"
+                                            ? "bg-rose-50 text-rose-600"
+                                            : "text-gray-700 hover:bg-rose-50"
                                         }`}
                             >
                               {option.label}
@@ -309,7 +309,7 @@ export default function Wishes() {
                     </div>
                     <textarea
                       placeholder="Kirimkan harapan dan doa untuk kedua mempelai..."
-                      className="w-full h-32 p-4 rounded-xl bg-white/50 border border-slate-100 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50 resize-none transition-all duration-200"
+                      className="w-full h-32 p-4 rounded-xl bg-white/50 border border-rose-100 focus:border-rose-300 focus:ring focus:ring-rose-200 focus:ring-opacity-50 resize-none transition-all duration-200"
                       required
                       value={newWish}
                       onChange={(e) => setNewWish(e.target.value)}
@@ -328,7 +328,7 @@ export default function Wishes() {
                     ${
                       isSubmitting
                         ? "bg-gray-300 cursor-not-allowed"
-                        : "bg-slate-500 hover:bg-slate-600"
+                        : "bg-rose-500 hover:bg-rose-600"
                     }`}
                   >
                     <Send className="w-4 h-4" />
