@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import config from "@/config/config";
 import { formatEventDate } from "@/lib/formatEventDate";
-import HeroBackground from "@/assets/hero-background.webp";
+import HeroBackground from "@/assets/background-landing.webp";
 
 export default function Hero() {
   // eslint-disable-next-line react/prop-types
@@ -139,6 +139,19 @@ export default function Hero() {
           </motion.div>
 
           <div className="space-y-4">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="bg-gradient-to-b from-rose-100/30 to-white/50 backdrop-blur-md inline-block mx-auto  w-40 rounded-full p-6  justify-center items-center border border-rose-100/50"
+            >
+              <img
+                src="https://6fapqydo5lifckcl.public.blob.vercel-storage.com/photo-kordie-SMOz67lgwnVpAbfBgGyDBpWjI5ro2Q"
+                alt="photo-cople"
+                className="h-auto w-40 z-10"
+              />
+            </motion.div>
+
             <motion.h2
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
