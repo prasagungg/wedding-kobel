@@ -28,7 +28,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="inline-block text-rose-500 font-medium mb-2"
+              className="inline-block text-red-500 font-medium mb-2"
             >
               Catat Tanggal Penting Ini
             </motion.span>
@@ -62,11 +62,11 @@ export default function Events() {
               transition={{ delay: 0.5 }}
               className="flex items-center justify-center gap-4 mt-6"
             >
-              <div className="h-[1px] w-12 bg-rose-200" />
-              <div className="text-rose-400">
+              <div className="h-[1px] w-12 bg-red-200" />
+              <div className="text-red-400">
                 <Heart className="w-4 h-4" fill="currentColor" />
               </div>
-              <div className="h-[1px] w-12 bg-rose-200" />
+              <div className="h-[1px] w-12 bg-red-200" />
             </motion.div>
           </motion.div>
 

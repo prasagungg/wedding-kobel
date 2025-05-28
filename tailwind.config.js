@@ -54,7 +54,7 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        rose: {
+        red: {
           50: "#fff1f2",
         },
         border: "hsl(var(--border))",
