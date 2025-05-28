@@ -20,7 +20,7 @@ export default function Bride() {
         transition={{ delay: 0.8 }}
         className="relative max-w-md mx-auto"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/30 to-white/50 backdrop-blur-md rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-100/100 to-white/50 backdrop-blur-md rounded-2xl" />
 
         <div className="relative px-4 sm:px-8 py-8 sm:py-10 rounded-2xl border border-slate-100/50">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px">
@@ -67,18 +67,7 @@ export default function Bride() {
 
   return (
     <>
-      <section id="bride" className="mt-10 relative overflow-hidden">
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={hasAnimated ? { scale: 1 } : {}}
-          transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-3 pt-4"
-        >
-          <div className="h-px w-8 bg-slate-200/50" />
-          <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-          <div className="h-px w-8 bg-slate-200/50" />
-        </motion.div>
-
+      <section id="bride" className="relative overflow-hidden bg-slate-100">
         <div className="container mx-auto px-4 py-10 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

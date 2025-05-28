@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import Marquee from "@/components/ui/marquee";
 import { motion } from "framer-motion";
-import { Image } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 
 function MarqueeRow({ items, reverse = false }) {
@@ -180,18 +179,6 @@ export default function Gallery() {
               Beberapa momen indah yang kami abadikan sebelum melangkah ke hari
               istimewa.
             </motion.p>
-
-            {/* Decorative Divider */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={hasAnimated ? { scale: 1 } : {}}
-              transition={{ delay: 0.4 }}
-              className="flex items-center justify-center gap-4 pt-4"
-            >
-              <div className="h-[1px] w-12 bg-slate-200" />
-              <Image className="w-5 h-5 text-slate-400" />
-              <div className="h-[1px] w-12 bg-slate-200" />
-            </motion.div>
 
             <MarqueeRow items={galeries1} />
             <MarqueeRow items={galeries2} reverse />

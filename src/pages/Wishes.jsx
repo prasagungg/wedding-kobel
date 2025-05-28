@@ -96,7 +96,10 @@ export default function Wishes() {
   };
   return (
     <>
-      <section id="wishes" className="min-h-screen relative overflow-hidden">
+      <section
+        id="wishes"
+        className="min-h-screen relative overflow-hidden bg-slate-100"
+      >
         {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
         <div className="container mx-auto px-4 py-20 relative z-10">
           {/* Section Header */}
@@ -225,7 +228,7 @@ export default function Wishes() {
                       type="text"
                       placeholder="Masukan nama kamu..."
                       className="w-full px-4 py-2.5 rounded-xl bg-white/50 border border-slate-100 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50 transition-all duration-200 text-gray-700 placeholder-gray-400"
-                      requislate
+                      required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
@@ -307,7 +310,7 @@ export default function Wishes() {
                     <textarea
                       placeholder="Kirimkan harapan dan doa untuk kedua mempelai..."
                       className="w-full h-32 p-4 rounded-xl bg-white/50 border border-slate-100 focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50 resize-none transition-all duration-200"
-                      requislate
+                      required
                       value={newWish}
                       onChange={(e) => setNewWish(e.target.value)}
                     />
