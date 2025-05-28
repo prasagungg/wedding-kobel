@@ -16,7 +16,7 @@ function MarqueeRow({ items, reverse = false }) {
         {items.map((galery) => (
           <div
             key={galery.name}
-            className="group relative w-[280px] sm:w-[280px] rounded-xl overflow-hidden border border-red-200 shadow-md"
+            className="group relative w-[280px] sm:w-[280px] rounded-xl overflow-hidden border border-cyan-200 shadow-md"
           >
             <img
               src={`${galery.src}?auto=format&fit=max&w=400`}
@@ -166,7 +166,7 @@ export default function Gallery() {
               initial={{ opacity: 0, y: 10 }}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
-              className="inline-block text-red-500 font-medium"
+              className="inline-block text-cyan-500 font-medium"
             >
               Kenangan Sebelum Janji Suci
             </motion.span>
@@ -188,9 +188,9 @@ export default function Gallery() {
               transition={{ delay: 0.4 }}
               className="flex items-center justify-center gap-4 pt-4"
             >
-              <div className="h-[1px] w-12 bg-red-200" />
-              <Image className="w-5 h-5 text-red-400" />
-              <div className="h-[1px] w-12 bg-red-200" />
+              <div className="h-[1px] w-12 bg-cyan-200" />
+              <Image className="w-5 h-5 text-cyan-400" />
+              <div className="h-[1px] w-12 bg-cyan-200" />
             </motion.div>
 
             <MarqueeRow items={galeries1} />

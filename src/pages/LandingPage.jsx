@@ -28,7 +28,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
           className="w-full max-w-md"
         >
           {/* Card Container */}
-          <div className="backdrop-blur-sm bg-white/50 p-6 sm:p-8 md:p-10 rounded-2xl border-2 border-red-300 shadow-xl">
+          <div className="backdrop-blur-sm bg-white/50 p-6 sm:p-8 md:p-10 rounded-2xl border-2 border-cyan-300 shadow-xl">
             {/* Date and Time */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -37,7 +37,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
               className="flex flex-col gap-4 mb-6 sm:mb-8 items-center"
             >
               <div className="inline-flex flex-col items-center space-y-1  px-4 sm:px-6 py-2 sm:py-3 rounded-xl">
-                <Calendar className="w-5 h-5 text-red-400" />
+                <Calendar className="w-5 h-5 text-cyan-400" />
                 <p className="text-gray-700 font-medium">
                   {formatEventDate(config.data.date)}
                 </p>
@@ -55,7 +55,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
                 Kami Mengundang
               </p>
 
-              <p className="text-red-400 font-bold text-lg">
+              <p className="text-cyan-400 font-bold text-lg">
                 {guestName === "" ? "Tamu" : guestName}
               </p>
             </motion.div>
@@ -70,10 +70,10 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-800 leading-tight">
                   {config.data.groomName}
-                  <span className="text-red-400 mx-2 sm:mx-3">&</span>
+                  <span className="text-cyan-400 mx-2 sm:mx-3">&</span>
                   {config.data.brideName}
                 </h1>
-                <div className="h-px w-16 sm:w-24 mx-auto bg-red-500" />
+                <div className="h-px w-16 sm:w-24 mx-auto bg-cyan-500" />
               </div>
             </motion.div>
 
@@ -88,7 +88,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={onOpenInvitation}
-                className="group relative w-full bg-red-400 text-white px-6 py-3 sm:px-8 sm:py-3 rounded-xl font-medium shadow-lg hover:bg-red-600 transition-all duration-200"
+                className="group relative w-full bg-cyan-400 text-white px-6 py-3 sm:px-8 sm:py-3 rounded-xl font-medium shadow-lg hover:bg-cyan-600 transition-all duration-200"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   <span>Buka Undangan</span>
@@ -99,7 +99,7 @@ const LandingPage = ({ onOpenInvitation, guestName }) => {
                     →
                   </motion.span>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.button>
             </motion.div>
           </div>
