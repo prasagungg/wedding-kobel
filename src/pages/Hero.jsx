@@ -97,9 +97,15 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url(${HeroBackground})` }}
+        className="min-h-screen flex flex-col items-center justify-center px-4 py-16 sm:py-20 text-center relative overflow-hidden "
       >
+        <img
+          src={HeroBackground}
+          alt="Background"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-200/90 via-slate-100/50 to-transparent z-0" />
 
         <motion.div
