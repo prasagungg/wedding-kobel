@@ -11,7 +11,16 @@ export default function Hero() {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     // eslint-disable-next-line react-hooks/exhaustive-deps
     function calculateTimeLeft() {
-      const difference = +new Date(targetDate) - +new Date();
+      const now = new Date();
+      const target = new Date(targetDate);
+
+      // Konversi waktu target ke WIB (UTC+7)
+      const utcOffsetWIB = 7 * 60; // menit
+      const targetWithWIB = new Date(
+        target.getTime() + (utcOffsetWIB - target.getTimezoneOffset()) * 60000
+      );
+
+      const difference = +targetWithWIB - +now;
       let timeLeft = {};
 
       if (difference > 0) {
