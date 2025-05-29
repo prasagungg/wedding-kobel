@@ -149,7 +149,7 @@ export default function Hero() {
             className="inline-block mx-auto"
           >
             <span className="px-4 py-1 text-sm bg-rose-100 text-rose-600 rounded-full border border-rose-200">
-              InsyaAllah Kami Akan Menikah
+              The Wedding of
             </span>
           </motion.div>
 
