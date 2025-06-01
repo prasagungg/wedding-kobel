@@ -42,7 +42,7 @@ function App() {
         />
         <meta
           property="og:image"
-          content={`${window.location.origin}/thumbnail.png`}
+          content={`https://www.radenmaulidia.my.id/thumbnail.png`}
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
