@@ -35,7 +35,7 @@ const config = {
     banks: [
       {
         bank: "Bank Central Asia (BCA)",
-        accountNumber: "1740843920",
+        accountNumber: "5735378624",
         accountName: "Raden Muhamad Rujilka Muhararan",
       },
       {
