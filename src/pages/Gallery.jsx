@@ -3,6 +3,34 @@ import Marquee from "@/components/ui/marquee";
 import { motion } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 
+// --- Import semua gambar lokal Anda ---
+import img1 from "@/assets/images/1.jpg";
+import img2 from "@/assets/images/2.jpg";
+import img3 from "@/assets/images/3.jpg";
+import img4 from "@/assets/images/4.jpg";
+import img5 from "@/assets/images/5.jpg";
+import img6 from "@/assets/images/6.jpg";
+import img7 from "@/assets/images/7.jpg";
+import img8 from "@/assets/images/8.jpg";
+import img9 from "@/assets/images/9.jpg";
+import img10 from "@/assets/images/10.jpg";
+import img11 from "@/assets/images/11.jpg";
+import img12 from "@/assets/images/12.jpg";
+import img13 from "@/assets/images/13.jpg";
+import img14 from "@/assets/images/14.jpg";
+import img15 from "@/assets/images/15.jpg";
+import img16 from "@/assets/images/16.jpg";
+import img17 from "@/assets/images/17.jpg";
+import img18 from "@/assets/images/18.jpg";
+import img19 from "@/assets/images/19.jpg";
+import img20 from "@/assets/images/20.jpg";
+import img21 from "@/assets/images/21.jpg";
+import img22 from "@/assets/images/22.jpg";
+import img23 from "@/assets/images/23.jpg";
+import img24 from "@/assets/images/24.jpg";
+import GalleryImage from "@/components/ui/GelleryImage";
+// --- Akhir import gambar ---
+
 function MarqueeRow({ items, reverse = false }) {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -13,20 +41,12 @@ function MarqueeRow({ items, reverse = false }) {
         reverse={reverse}
       >
         {items.map((galery) => (
-          <div
+          <GalleryImage
             key={galery.name}
-            className="group relative w-[280px] sm:w-[280px] rounded-xl overflow-hidden border border-rose-200 shadow-md"
-          >
-            <img
-              src={`${galery.src}?auto=format&fit=max&w=400`}
-              alt={galery.name.replace(/-/g, " ")}
-              className="w-full h-40 object-cover"
-              loading="lazy"
-              srcSet={`${galery.src}?w=280 280w, ${galery.src}?w=560 560w`}
-              sizes="(max-width: 600px) 280px, 560px"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 rounded-xl" />
-          </div>
+            src={galery.src}
+            alt={galery.name.replace(/-/g, " ")}
+            name={galery.name}
+          />
         ))}
       </Marquee>
     </div>
@@ -38,102 +58,30 @@ export default function Gallery() {
 
   const galeries = useMemo(
     () => [
-      {
-        name: "gambar-1",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%281%29-NNWnSeSF4ZZ939tpU5mOoiB35MwQ7i.jpg",
-      },
-      {
-        name: "gambar-2",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2810%29-cDGbufld9b5GRfe85bKbygDYediMR8.jpg",
-      },
-      {
-        name: "gambar-3",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2811%29-Ktt5AdyjXSwnDr75E0C1MN9vkNI2oV.jpg",
-      },
-      {
-        name: "gambar-4",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2812%29-4boz3fsuwBaDPp7rKFZThUWZr1mc0D.jpg",
-      },
-      {
-        name: "gambar-5",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2813%29-rW104GlOpeUMS0mPjIdvsqxDfRo5sT.jpg",
-      },
-      {
-        name: "gambar-6",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2814%29-DT9H7z1QL6jjI7NT0UQAt2yglplrmw.jpg",
-      },
-      {
-        name: "gambar-7",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2815%29-dQYhbBcxEprTnQ9WRPgQa98hSFgQj6.jpg",
-      },
-      {
-        name: "gambar-8",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2816%29-rmW1lmLlKCs67pAspmbpsmnmKPLamV.jpg",
-      },
-      {
-        name: "gambar-9",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2817%29-q5zrj9iBRlLm8kMf0nDPEbwcMUAlgo.jpg",
-      },
-      {
-        name: "gambar-10",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2818%29-gM8AQONszylXyIKQPXiloPWl4pkQDY.jpg",
-      },
-      {
-        name: "gambar-11",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2819%29-1CkvF9poAdYI2Erbc40U7nAdDgxv2j.jpg",
-      },
-      {
-        name: "gambar-12",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%282%29-tESfxJfps9laXks7CiKQoRewKmPJny.jpg",
-      },
-      {
-        name: "gambar-13",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2820%29-hoIoNljt8lyhODL9lKNNZEgnEeL96D.jpg",
-      },
-      {
-        name: "gambar-14",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2821%29-HzPBvJ0BqyYzYCpwd0gHXGXHiBtr1R.jpg",
-      },
-      {
-        name: "gambar-15",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2822%29-KXZxBVg4Sf6WpbSlDgQIEkOi3S8nGB.jpg",
-      },
-      {
-        name: "gambar-16",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2823%29-6SSETBIEmQjKFoskXGzPQScnUjsUJl.jpg",
-      },
-      {
-        name: "gambar-17",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%2824%29-gKVJdQHLnVSyerorklZZ5Bics3nxGd.jpg",
-      },
-      {
-        name: "gambar-18",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%283%29-rBG4ye0TgxqYM9iH58ajOO2CWbSbvq.jpg",
-      },
-      {
-        name: "gambar-19",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%284%29-CSSiIz0fWF2yBlpdXI778tJIuScQMj.jpg",
-      },
-      {
-        name: "gambar-20",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%285%29-f0SnWki4f2Oh1rHyCk3o4pcYdfS0ly.jpg",
-      },
-      {
-        name: "gambar-21",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%286%29-GdIyvUuKLdiWohEYecIutIJ9MsJXOd.jpg",
-      },
-      {
-        name: "gambar-22",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%287%29-ssuYQNq0qWYbaMdX9fAzCbS0DWv67I.jpg",
-      },
-      {
-        name: "gambar-23",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%288%29-pz0yQaeA2l3CARdpetgOt0KudTeNzX.jpg",
-      },
-      {
-        name: "gambar-24",
-        src: "https://6fapqydo5lifckcl.public.blob.vercel-storage.com/1%20%289%29-5UxERrakpXHmDuzH0WvEzctUWCaD2E.jpg",
-      },
+      { name: "gambar-1", src: img1 },
+      { name: "gambar-2", src: img2 },
+      { name: "gambar-3", src: img3 },
+      { name: "gambar-4", src: img4 },
+      { name: "gambar-5", src: img5 },
+      { name: "gambar-6", src: img6 },
+      { name: "gambar-7", src: img7 },
+      { name: "gambar-8", src: img8 },
+      { name: "gambar-9", src: img9 },
+      { name: "gambar-10", src: img10 },
+      { name: "gambar-11", src: img11 },
+      { name: "gambar-12", src: img12 },
+      { name: "gambar-13", src: img13 },
+      { name: "gambar-14", src: img14 },
+      { name: "gambar-15", src: img15 },
+      { name: "gambar-16", src: img16 },
+      { name: "gambar-17", src: img17 },
+      { name: "gambar-18", src: img18 },
+      { name: "gambar-19", src: img19 },
+      { name: "gambar-20", src: img20 },
+      { name: "gambar-21", src: img21 },
+      { name: "gambar-22", src: img22 },
+      { name: "gambar-23", src: img23 },
+      { name: "gambar-24", src: img24 },
     ],
     []
   );
@@ -154,7 +102,7 @@ export default function Gallery() {
     <>
       <section id="gallery" className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-10 relative z-10">
-          {/* Section Header */}
+          {/* Bagian Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -179,11 +127,11 @@ export default function Gallery() {
               Beberapa momen indah yang kami abadikan sebelum melangkah ke hari
               istimewa.
             </motion.p>
-
-            <MarqueeRow items={galeries1} />
-            <MarqueeRow items={galeries2} reverse />
-            <MarqueeRow items={galeries3} />
           </motion.div>
+          {/* Baris Marquee */}
+          <MarqueeRow items={galeries1} />
+          <MarqueeRow items={galeries2} reverse />
+          <MarqueeRow items={galeries3} />
         </div>
       </section>
     </>
