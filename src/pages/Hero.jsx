@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import config from "@/config/config";
 import { formatEventDate } from "@/lib/formatEventDate";
 import HeroBackground from "@/assets/background-landing.webp";
+import Kobel from "@/assets/kobe.png";
 
 export default function Hero() {
   // eslint-disable-next-line react/prop-types
@@ -160,11 +161,7 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
               className="bg-gradient-to-b from-rose-100/30 to-white/50 backdrop-blur-md inline-block mx-auto  w-40 rounded-full p-6  justify-center items-center border border-rose-100/50"
             >
-              <img
-                src="https://cdn.discordapp.com/attachments/1178183487241601136/1379128592960720936/1_411.png?ex=683f1d17&is=683dcb97&hm=b4238393ab456c49efe8ff1925d8e75640133056ebc97a68911a69ce829912ee&"
-                alt="photo-cople"
-                className="h-auto w-40 z-10"
-              />
+              <img src={Kobel} alt="photo-cople" className="h-auto w-40 z-10" />
             </motion.div>
 
             <motion.h2
