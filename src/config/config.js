@@ -8,9 +8,9 @@ const config = {
     parentGroom: "Bapak Groom & Ibu Groom",
     parentBride: "Bapak Bride & Ibu Bride",
     date: "2025-06-08",
-    maps_url: "https://maps.app.goo.gl/LC5JDNJFMn9AdY6GA",
+    maps_url: "https://maps.app.goo.gl/a7PhQkwW39oAJxAf9",
     maps_embed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.728778329155!2d106.81883481029398!3d-6.629223493337416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5fdcdf710b9%3A0xc9b4b6786b25aca1!2sBalai%20Prajurit%20Resimen%20II%20Pelopor!5e1!3m2!1sid!2sid!4v1747623065608!5m2!1sid!2sid",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.789026601338!2d106.81318531029387!3d-6.6213124933452185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5fdc85c009b%3A0x3f1d828e147c2e5c!2sKomplek%20Brimob%20Sukasari!5e1!3m2!1sid!2sid!4v1749096951264!5m2!1sid!2sid",
     time: "10:00 - 17:00 WIB",
     location: "Balai Prajurit Resimen II Pelopor",
     address: "Lawanggintung, Kec. Bogor Selatan, Kota Bogor",
