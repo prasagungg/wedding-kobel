@@ -12,7 +12,7 @@ const config = {
     maps_embed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.789026601338!2d106.81318531029387!3d-6.6213124933452185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5fdc85c009b%3A0x3f1d828e147c2e5c!2sKomplek%20Brimob%20Sukasari!5e1!3m2!1sid!2sid!4v1749096951264!5m2!1sid!2sid",
     time: "10:00 - 17:00 WIB",
-    location: "komplek brimop suksari",
+    location: "komplek brimop sukasari",
     address: "Lawanggintung, Kec. Bogor Selatan, Kota Bogor",
     ogImage: "/images/og-image.jpg",
     favicon: "/images/favicon.ico",
@@ -22,7 +22,7 @@ const config = {
         date: "2025-06-08",
         startTime: "10:00",
         endTime: "17:00",
-        location: "komplek brimop suksari",
+        location: "komplek brimop sukasari",
         address: "Lawanggintung, Kec. Bogor Selatan, Kota Bogor",
       },
     ],
